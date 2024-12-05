@@ -80,6 +80,12 @@ form {
   border: 0.5px solid rgb(136, 136, 136);
 }
 
+.card a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .card:hover {
   border: 0.5px solid rgb(206, 217, 142);
 }
@@ -92,6 +98,15 @@ form {
   height: auto;
   flex-wrap: wrap;
   margin: 0 auto;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card:link{
+  justify-items: center;
 }
 
 table {
