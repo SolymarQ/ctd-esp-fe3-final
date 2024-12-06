@@ -1,12 +1,13 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import { useDentistState } from "../Components/utils/global.context";
 
 
 const Card = ({ name, username, id }) => {
-
-  const addFav = ()=>{
-    // Aqui iria la logica para agregar la Card en el localStorage
-  }
+  const { dispatch, state } = useDentistState();
+  const findFav = state.favs.some((fav) => id === fav.id)
+  const toggleFav = () => {
+    dispatch({type: findFav ? "DELETE_FAVORITE" : "ADD_FAVORITE", payload: {name, username, id}})
+  };
 
   return (
     <div className="card">
@@ -15,9 +16,8 @@ const Card = ({ name, username, id }) => {
           <h3>{name}</h3>
           <p>{username}</p>
         </Link>
-
-        {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
-        <button onClick={addFav} className="favButton">⭐</button>
+        <br />
+        <button onClick={toggleFav} className="favButton">{findFav ? "🌟" : "⭐"}</button>
     </div>
   );
 };
