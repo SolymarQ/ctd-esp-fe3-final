@@ -105,7 +105,7 @@ form {
   height: auto;
 }
 
-.card:link{
+.card:link {
   justify-items: center;
 }
 
@@ -134,4 +134,17 @@ tr:nth-child(even) {
 }
 .dark > a {
   color: white;
+}
+
+.detail {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.detail > img {
+  width: 200px;
+  height: 200px;
 }
