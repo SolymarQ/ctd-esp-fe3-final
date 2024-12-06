@@ -3,15 +3,11 @@ import { useDentistState } from "../Components/utils/global.context";
 
 
 const Card = ({ name, username, id }) => {
-  const { setFavs } = useDentistState();
-  const addFav = () => {
-    setFavs((favs) => {
-      if(favs.some((fav) => fav.id === id)){
-        return favs;
-      }
-      return [...favs, { name, username, id}]
-    });
-  }
+  const { dispatch, state } = useDentistState();
+  const findFav = state.favs.some((fav) => id === fav.id)
+  const toggleFav = () => {
+    dispatch({type: findFav ? "DELETE_FAVORITE" : "ADD_FAVORITE", payload: {name, username, id}})
+  };
 
   return (
     <div className="card">
@@ -21,7 +17,7 @@ const Card = ({ name, username, id }) => {
           <p>{username}</p>
         </Link>
         <br />
-        <button onClick={addFav} className="favButton">⭐</button>
+        <button onClick={toggleFav} className="favButton">{findFav ? "🌟" : "⭐"}</button>
     </div>
   );
 };

@@ -4,7 +4,8 @@ import { useDentistState } from '../Components/utils/global.context';
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Home = () => {
-  const { dentists } = useDentistState();
+  const { state: {dentists} } = useDentistState();
+  console.log(dentists);
   return (
     <main className="" >
       <h1>Home</h1>

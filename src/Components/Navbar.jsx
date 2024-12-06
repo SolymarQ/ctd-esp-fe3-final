@@ -9,7 +9,7 @@ const Navbar = () => {
     <nav>
       {/* Aqui deberan agregar los liks correspondientes a las rutas definidas */}
       <div>
-        <Link to="/">Home</Link>
+        <Link to="/home">Home</Link>
         <Link to="/contact">Contact</Link>
         <Link to="/dentist/:id">Detail</Link>
         <Link to="/favs">Favs</Link>
