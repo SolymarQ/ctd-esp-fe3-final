@@ -2,24 +2,25 @@ import {useState} from "react";
 
 
 const Form = () => {
-  //Aqui deberan implementar el form completo con sus validaciones
-  const [fullName, setFullName] = useState("");
-  const [email, setEmail] = useState("");
+  const [data, setData] = useState({
+    fullName: "",
+    email: ""
+  });
   const [error, setError] = useState("");
   const [infoMsg, setInfoMsg] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
     if (
-      fullName.trim().length < 5 ||
-      !isValidateEmail(email)
+      data.fullName.trim().length < 5 ||
+      !isValidateEmail(data.email)
     ) {
       setError("Por favor verifique su información nuevamente")
       setInfoMsg("")
       return;
     }
-    console.log({ fullName, email});
-    setInfoMsg(`Gracias ${fullName}, te contactaremos cuanto antes vía mail`);
+    console.log(data.fullName, data.email);
+    setInfoMsg(`Gracias ${data.fullName}, te contactaremos cuanto antes vía mail`);
     setError("")
   }
 
@@ -31,8 +32,8 @@ const Form = () => {
           <input
             id="fullName"
             type="text"
-            value={fullName}
-            onChange={(event) => setFullName(event.target.value)}
+            value={data.fullName}
+            onChange={(event) => setData({...data, fullName: event.target.value})}
           />
         </div>
         <div>
@@ -40,14 +41,14 @@ const Form = () => {
           <input
             id="email"
             type="email"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
+            value={data.email}
+            onChange={(event) => setData({...data, email: event.target.value})}
           />
         </div>
         <button type="submit">Enviar</button>
       </form>
 
-      {error && <p className="text-error">{error}</p>}
+      {error && <p>{error}</p>}
       {infoMsg && <p>{infoMsg}</p>}
     </div>
   );
