@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <nav className={state.theme}>
       <div>
-        <img src="/public/DH.ico" alt="Icono de digital House" />
+        <img src="/DH.ico" alt="Icono de digital House" />
       </div>
       <div>
         <Link to="/home">Home</Link>

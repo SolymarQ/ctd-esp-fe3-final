@@ -25,7 +25,7 @@ const Form = () => {
   }
 
   return (
-    <div>
+    <div className="form-center">
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="fullName">Nombre Completo: </label>

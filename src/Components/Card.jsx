@@ -12,7 +12,7 @@ const Card = ({ name, username, id }) => {
   return (
     <div className="card">
         <Link to={`/dentist/${id}`}>
-          <img src="/public/images/doctor.jpg" alt="Doctor"/>
+          <img src="/images/doctor.jpg" alt="Doctor"/>
           <h3>{name}</h3>
           <p>{username}</p>
         </Link>

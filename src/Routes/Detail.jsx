@@ -22,7 +22,7 @@ const Detail = () => {
         <h1>Detail Dentist {dentist.id} </h1>
       </header>
       <section className="detail">
-        <img src="/public/images/doctor.jpg" alt="Doctor" />
+        <img src="/images/doctor.jpg" alt="Doctor" />
         <div>
           <h2>Nombre: {dentist.name}</h2>
           <h3>Email: {dentist.email}</h3>
