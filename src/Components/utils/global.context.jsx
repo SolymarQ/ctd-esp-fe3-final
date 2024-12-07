@@ -9,7 +9,7 @@ const lsFavs = JSON.parse(localStorage.getItem("favs")) || [];
 const initialState = {
     dentists: [],
     favs: lsFavs,
-    theme: ""
+    theme: "light"
 }
 
 export const ContextProvider = ({children}) => {
@@ -18,6 +18,9 @@ export const ContextProvider = ({children}) => {
   useEffect(() => {
     localStorage.setItem("favs", JSON.stringify(state.favs))
   }, [state.favs]);
+  useEffect(() => {
+    document.body.className = state.theme;
+  }, [state.theme]);  
   useEffect(() => {
       axios(url).then((res) => {
       console.log("data",res.data);

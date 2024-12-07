@@ -12,7 +12,7 @@ code {
     monospace;
 }
 .favButton {
-  background-color: rgba(136, 136, 136, 0.116);
+  background-color: rgba(60, 58, 58, 0.116);
   padding: 10px;
   border: none;
   width: 100%;
@@ -25,9 +25,27 @@ h1 {
 
 nav {
   display: flex;
-  width: 100vw;
-  justify-content: flex-start;
-  padding: 1rem;
+  justify-content:space-between;
+  align-items: center;
+  padding: 1.5rem 4.5rem 1.5rem 4.5rem;
+  background-color: #f5f5f5;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+}
+
+nav div:first-child {
+  display: flex;
+  align-items: center;
+}
+
+nav div:last-child {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+nav img {
+  height: 40px;
 }
 
 a {
@@ -42,23 +60,75 @@ a:hover {
 
 footer {
   display: flex;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem;
-  position: relative;
-  bottom: 0;
-  width: 100vw;
-  height: 40px;
-  margin-top: 2rem;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0rem 0rem 0rem;
 }
 
-footer > img {
-  width: 200px;
-  margin: 0;
+.footer-text {
+  text-align: center;
+  background-color: red;
+  width: 100%;
 }
-footer > p {
-  margin: 0;
-  padding-top: 0.7rem;
+
+.footer-images {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem 3rem;
+  width: 100%;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+}
+
+.footer-images-left img {
+  height: 50px;
+}
+
+.footer-images-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.social-icons img {
+  height: 30px;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.light .social-icons img {
+  background-color: #000;
+}
+
+.theme-button {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: none;
+  border-radius: 4px;
+}
+
+.theme-button.light {
+  background-color: black;
+  color: white;
+}
+
+.theme-button.dark {
+  background-color: white;
+  color: black;
+}
+
+.theme-button:hover {
+  opacity: 0.8;
 }
 
 form {
@@ -126,6 +196,15 @@ th {
 
 tr:nth-child(even) {
   background-color: #dddddd;
+}
+
+.light {
+  background-color: #fff;
+  color: #000;
+}
+
+.light > a {
+  color: #000;
 }
 
 .dark {

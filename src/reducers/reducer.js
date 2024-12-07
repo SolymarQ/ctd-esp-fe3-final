@@ -8,6 +8,6 @@ export const reducer = (state, action) => {
             const filterFavs = state.favs.filter((fav) => fav.id !== action.payload.id);
             return {...state, favs: filterFavs}
         case "TOOGLE_THEME":
-            return {...state, theme: "valores"}
+            return {...state, theme: state.theme === "dark" ? "light" : "dark"}
     }
 };

@@ -1,19 +1,24 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
-
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
+import { useDentistState } from '../Components/utils/global.context';
 
 const Navbar = () => {
+  const { state, dispatch } = useDentistState();
+
+  const toggleTheme = () => {
+    dispatch({ type: "TOOGLE_THEME" });
+  };
 
   return (
-    <nav>
+    <nav className={state.theme}>
+      <div>
+        <img src="/public/DH.ico" alt="Icono de digital House" />
+      </div>
       <div>
         <Link to="/home">Home</Link>
         <Link to="/contact">Contact</Link>
         <Link to="/favs">Favs</Link>
+        <button onClick={toggleTheme} className={`theme-button ${state.theme === 'dark' ? 'dark' : 'light'}`} >{state.theme === "dark" ? "☀️" : "🌙"}</button>
       </div>
-      {/* Deberan implementar ademas la logica para cambiar de Theme con el button */}
-      <button>Change theme</button>
     </nav>
   )
 }
