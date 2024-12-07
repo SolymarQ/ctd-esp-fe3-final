@@ -8,7 +8,6 @@ const Detail = () => {
   // Consumiendo el parametro dinamico de la URL deberan hacer un fetch a un user en especifico
 
   const [dentist, setDentist] = useState({});
-  // const params = useParams();
   const { id } = useParams();
   const url = "https://jsonplaceholder.typicode.com/users/" + id;
   useEffect(() => {
